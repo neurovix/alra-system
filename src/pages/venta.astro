@@ -1,0 +1,270 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+---
+
+<Layout>
+    <main>
+        <Navbar />
+        
+        <!-- Hero Section con Formulario -->
+        <section class="bg-gray-50 min-h-screen py-8">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Título principal -->
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Venta</h1>
+                    <p class="text-gray-600">Registra la venta de material procesado</p>
+                </div>
+
+                <!-- Formulario -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <form class="space-y-8">
+                        <!-- Lote a vender -->
+                        <div>
+                            <label for="lote_vender" class="block text-sm font-medium text-gray-700 mb-2">Lote a vender</label>
+                            <select 
+                                id="lote_vender" 
+                                name="lote_vender"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-colors bg-white"
+                            >
+                                <option value="">Selecciona el lote a vender</option>
+                                <option value="001">001 - Botellas PET Coca-Cola (150 kg)</option>
+                                <option value="002">002 - Envases HDPE Detergente (85 kg)</option>
+                                <option value="003">003 - Contenedores PP Yogurt (220 kg)</option>
+                                <option value="004">004 - Bolsas LDPE Supermercado (45 kg)</option>
+                                <option value="005">005 - Vasos PS Desechables (75 kg)</option>
+                            </select>
+                        </div>
+
+                        <!-- Selecciona el cliente -->
+                        <div>
+                            <label for="cliente" class="block text-sm font-medium text-gray-700 mb-2">Selecciona el cliente</label>
+                            <select 
+                                id="cliente" 
+                                name="cliente"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-colors bg-white"
+                            >
+                                <option value="">Selecciona el cliente</option>
+                                <option value="plasticos_del_norte">Plásticos del Norte S.A. de C.V.</option>
+                                <option value="reciclaje_industrial">Reciclaje Industrial México</option>
+                                <option value="eco_materiales">Eco Materiales Sustentables</option>
+                                <option value="plasticos_monterrey">Plásticos Monterrey</option>
+                                <option value="verde_recycling">Verde Recycling Solutions</option>
+                                <option value="materiales_coahuila">Materiales de Coahuila</option>
+                            </select>
+                        </div>
+
+                        <!-- Cantidad a vender -->
+                        <div>
+                            <label for="cantidad_vender" class="block text-sm font-medium text-gray-700 mb-2">Cantidad a vender</label>
+                            <input 
+                                type="text" 
+                                id="cantidad_vender" 
+                                name="cantidad_vender" 
+                                placeholder="220 kg"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-colors bg-gray-50"
+                                readonly
+                            >
+                        </div>
+
+                        <!-- Precio unitario -->
+                        <div>
+                            <label for="precio_unitario" class="block text-sm font-medium text-gray-700 mb-2">Precio unitario</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
+                                <input 
+                                    type="number" 
+                                    id="precio_unitario" 
+                                    name="precio_unitario" 
+                                    placeholder="0.00"
+                                    class="w-full pl-8 pr-20 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-colors"
+                                    min="0"
+                                    step="0.01"
+                                >
+                                <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">por kg</span>
+                            </div>
+                        </div>
+
+                        <!-- Fecha de entrega -->
+                        <div>
+                            <label for="fecha_entrega" class="block text-sm font-medium text-gray-700 mb-2">Fecha de entrega</label>
+                            <input 
+                                type="date" 
+                                id="fecha_entrega" 
+                                name="fecha_entrega"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-colors"
+                            >
+                        </div>
+
+                        <!-- Total calculado -->
+                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-medium text-gray-700">Total de la venta:</span>
+                                <span id="total_venta" class="text-2xl font-bold text-green-600">$0.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Imágenes de venta -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-4">Imágenes de venta</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                <!-- Espacio 1 -->
+                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50">
+                                    <input type="file" accept="image/*" class="hidden" id="venta_image1">
+                                    <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-500">Subir imagen</span>
+                                </div>
+                                
+                                <!-- Espacio 2 -->
+                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50">
+                                    <input type="file" accept="image/*" class="hidden" id="venta_image2">
+                                    <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-500">Subir imagen</span>
+                                </div>
+                                
+                                <!-- Espacio 3 -->
+                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50">
+                                    <input type="file" accept="image/*" class="hidden" id="venta_image3">
+                                    <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-500">Subir imagen</span>
+                                </div>
+                                
+                                <!-- Espacio 4 -->
+                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50">
+                                    <input type="file" accept="image/*" class="hidden" id="venta_image4">
+                                    <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-500">Subir imagen</span>
+                                </div>
+                                
+                                <!-- Espacio 5 -->
+                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50">
+                                    <input type="file" accept="image/*" class="hidden" id="venta_image5">
+                                    <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-500">Subir imagen</span>
+                                </div>
+                                
+                                <!-- Espacio 6 -->
+                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50">
+                                    <input type="file" accept="image/*" class="hidden" id="venta_image6">
+                                    <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-500">Subir imagen</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="flex flex-col sm:flex-row gap-4 pt-6">
+                            <button 
+                                type="button"
+                                class="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                            >
+                                Regresar
+                            </button>
+                            <button 
+                                type="submit"
+                                class="flex-1 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
+                            >
+                                Guardar venta
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<script>
+    // Datos de los lotes con sus pesos
+    const loteData = {
+        "001": { peso: 150, nombre: "Botellas PET Coca-Cola" },
+        "002": { peso: 85, nombre: "Envases HDPE Detergente" },
+        "003": { peso: 220, nombre: "Contenedores PP Yogurt" },
+        "004": { peso: 45, nombre: "Bolsas LDPE Supermercado" },
+        "005": { peso: 75, nombre: "Vasos PS Desechables" }
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const loteSelect = document.getElementById('lote_vender');
+        const cantidadInput = document.getElementById('cantidad_vender');
+        const precioUnitarioInput = document.getElementById('precio_unitario');
+        const totalVentaDisplay = document.getElementById('total_venta');
+
+        // Manejar cambio de lote seleccionado
+        loteSelect?.addEventListener('change', function() {
+            const selectedLote = this.value;
+            if (selectedLote && loteData[selectedLote]) {
+                cantidadInput.value = `${loteData[selectedLote].peso} kg`;
+                calcularTotal();
+            } else {
+                cantidadInput.value = '';
+                calcularTotal();
+            }
+        });
+
+        // Manejar cambio en precio unitario
+        precioUnitarioInput?.addEventListener('input', calcularTotal);
+
+        function calcularTotal() {
+            const loteSeleccionado = loteSelect?.value;
+            const precioUnitario = parseFloat(precioUnitarioInput?.value) || 0;
+            
+            if (loteSeleccionado && loteData[loteSeleccionado] && precioUnitario > 0) {
+                const cantidad = loteData[loteSeleccionado].peso;
+                const total = cantidad * precioUnitario;
+                totalVentaDisplay.textContent = `$${total.toFixed(2)}`;
+            } else {
+                totalVentaDisplay.textContent = '$0.00';
+            }
+        }
+
+        // Script para manejar la carga de imágenes
+        for (let i = 1; i <= 6; i++) {
+            const fileInput = document.getElementById(`venta_image${i}`);
+            const container = fileInput?.parentElement;
+            
+            container?.addEventListener('click', function() {
+                fileInput.click();
+            });
+            
+            fileInput?.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        if (container) {
+                            container.innerHTML = `
+                                <img src="${e.target.result}" alt="Imagen de venta" class="w-full h-full object-cover rounded-lg">
+                                <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-200 rounded-lg flex items-center justify-center">
+                                    <span class="text-white opacity-0 hover:opacity-100 transition-opacity duration-200">Cambiar imagen</span>
+                                </div>
+                            `;
+                            container.classList.add('relative', 'overflow-hidden');
+                            container.classList.remove('border-dashed', 'bg-gray-50');
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        // Establecer fecha mínima como hoy
+        const fechaEntregaInput = document.getElementById('fecha_entrega');
+        if (fechaEntregaInput) {
+            const today = new Date().toISOString().split('T')[0];
+            fechaEntregaInput.min = today;
+        }
+    });
+</script>
