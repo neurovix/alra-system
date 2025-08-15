@@ -73,58 +73,53 @@ import Layout from "../layouts/Layout.astro";
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-4">Imágenes del lote</label>
                             <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                                <!-- Espacio 1 -->
-                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50">
-                                    <input type="file" accept="image/*" class="hidden" id="image1">
+                                <!-- Espacios para imágenes (1-6) -->
+                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50" data-image-slot="1">
                                     <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     </svg>
-                                    <span class="text-sm text-gray-500">Subir imagen</span>
+                                    <span class="text-sm text-gray-500">Tomar foto</span>
                                 </div>
                                 
-                                <!-- Espacio 2 -->
-                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50">
-                                    <input type="file" accept="image/*" class="hidden" id="image2">
+                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50" data-image-slot="2">
                                     <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     </svg>
-                                    <span class="text-sm text-gray-500">Subir imagen</span>
+                                    <span class="text-sm text-gray-500">Tomar foto</span>
                                 </div>
                                 
-                                <!-- Espacio 3 -->
-                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50">
-                                    <input type="file" accept="image/*" class="hidden" id="image3">
+                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50" data-image-slot="3">
                                     <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     </svg>
-                                    <span class="text-sm text-gray-500">Subir imagen</span>
+                                    <span class="text-sm text-gray-500">Tomar foto</span>
                                 </div>
                                 
-                                <!-- Espacio 4 -->
-                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50">
-                                    <input type="file" accept="image/*" class="hidden" id="image4">
+                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50" data-image-slot="4">
                                     <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     </svg>
-                                    <span class="text-sm text-gray-500">Subir imagen</span>
+                                    <span class="text-sm text-gray-500">Tomar foto</span>
                                 </div>
                                 
-                                <!-- Espacio 5 -->
-                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50">
-                                    <input type="file" accept="image/*" class="hidden" id="image5">
+                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50" data-image-slot="5">
                                     <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     </svg>
-                                    <span class="text-sm text-gray-500">Subir imagen</span>
+                                    <span class="text-sm text-gray-500">Tomar foto</span>
                                 </div>
                                 
-                                <!-- Espacio 6 -->
-                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50">
-                                    <input type="file" accept="image/*" class="hidden" id="image6">
+                                <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center hover:border-green-500 transition-colors cursor-pointer bg-gray-50" data-image-slot="6">
                                     <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     </svg>
-                                    <span class="text-sm text-gray-500">Subir imagen</span>
+                                    <span class="text-sm text-gray-500">Tomar foto</span>
                                 </div>
                             </div>
                         </div>
@@ -148,41 +143,144 @@ import Layout from "../layouts/Layout.astro";
                 </div>
             </div>
         </section>
+
+        <!-- Modal para la cámara -->
+        <div id="cameraModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+            <div class="bg-white rounded-lg max-w-md w-full">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-semibold text-gray-900">Tomar foto</h3>
+                        <button id="closeCameraBtn" class="text-gray-400 hover:text-gray-600">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="relative">
+                        <video id="cameraVideo" class="w-full rounded-lg" autoplay playsinline></video>
+                        <canvas id="cameraCanvas" class="hidden"></canvas>
+                    </div>
+                    
+                    <div class="flex gap-4 mt-4">
+                        <button id="takePictureBtn" class="flex-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                            Tomar foto
+                        </button>
+                        <button id="cancelCameraBtn" class="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </Layout>
 
 <script>
-    // Script para manejar la carga de imágenes
     document.addEventListener('DOMContentLoaded', function() {
-        for (let i = 1; i <= 6; i++) {
-            const fileInput = document.getElementById(`image${i}`);
-            const container = fileInput?.parentElement;
-            
-            container?.addEventListener('click', function() {
-                fileInput.click();
-            });
-            
-            fileInput?.addEventListener('change', function(e) {
-                const file = e.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        if (container) {
-                            container.innerHTML = `
-                                <img src="${e.target.result}" alt="Imagen del lote" class="w-full h-full object-cover rounded-lg">
-                                <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-200 rounded-lg flex items-center justify-center">
-                                    <span class="text-white opacity-0 hover:opacity-100 transition-opacity duration-200">Cambiar imagen</span>
-                                </div>
-                            `;
-                            container.classList.add('relative', 'overflow-hidden');
-                            container.classList.remove('border-dashed', 'bg-gray-50');
-                        }
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
+        let currentStream = null;
+        let currentImageSlot = null;
+        const cameraModal = document.getElementById('cameraModal');
+        const cameraVideo = document.getElementById('cameraVideo');
+        const cameraCanvas = document.getElementById('cameraCanvas');
+        const closeCameraBtn = document.getElementById('closeCameraBtn');
+        const takePictureBtn = document.getElementById('takePictureBtn');
+        const cancelCameraBtn = document.getElementById('cancelCameraBtn');
+
+        // Función para abrir la cámara
+        async function openCamera() {
+            try {
+                currentStream = await navigator.mediaDevices.getUserMedia({
+                    video: { 
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 },
+                        facingMode: 'environment' // Usar cámara trasera en móviles
+                    }
+                });
+                
+                cameraVideo.srcObject = currentStream;
+                cameraModal.classList.remove('hidden');
+            } catch (error) {
+                console.error('Error al acceder a la cámara:', error);
+                alert('No se pudo acceder a la cámara. Por favor, verifica los permisos.');
+            }
         }
-        
+
+        // Función para cerrar la cámara
+        function closeCamera() {
+            if (currentStream) {
+                currentStream.getTracks().forEach(track => track.stop());
+                currentStream = null;
+            }
+            cameraModal.classList.add('hidden');
+            currentImageSlot = null;
+        }
+
+        // Función para tomar la foto
+        function takePicture() {
+            const canvas = cameraCanvas;
+            const video = cameraVideo;
+            const context = canvas.getContext('2d');
+
+            // Establecer el tamaño del canvas igual al video
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+
+            // Dibujar la imagen del video en el canvas
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Convertir a data URL
+            const imageDataUrl = canvas.toDataURL('image/jpeg', 0.8);
+
+            // Mostrar la imagen en el slot correspondiente
+            if (currentImageSlot) {
+                const container = currentImageSlot;
+                container.innerHTML = `
+                    <img src="${imageDataUrl}" alt="Foto del lote" class="w-full h-full object-cover rounded-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-200 rounded-lg flex items-center justify-center">
+                        <span class="text-white opacity-0 hover:opacity-100 transition-opacity duration-200">Tomar nueva foto</span>
+                    </div>
+                `;
+                container.classList.add('relative', 'overflow-hidden');
+                container.classList.remove('border-dashed', 'bg-gray-50');
+                
+                // Guardar la imagen en un input hidden para el formulario
+                const slotNumber = container.getAttribute('data-image-slot');
+                let hiddenInput = document.getElementById(`image_data_${slotNumber}`);
+                if (!hiddenInput) {
+                    hiddenInput = document.createElement('input');
+                    hiddenInput.type = 'hidden';
+                    hiddenInput.id = `image_data_${slotNumber}`;
+                    hiddenInput.name = `image_data_${slotNumber}`;
+                    container.appendChild(hiddenInput);
+                }
+                hiddenInput.value = imageDataUrl;
+            }
+
+            closeCamera();
+        }
+
+        // Event listeners para los slots de imágenes
+        const imageSlots = document.querySelectorAll('[data-image-slot]');
+        imageSlots.forEach(slot => {
+            slot.addEventListener('click', function() {
+                currentImageSlot = this;
+                openCamera();
+            });
+        });
+
+        // Event listeners para el modal de la cámara
+        closeCameraBtn.addEventListener('click', closeCamera);
+        cancelCameraBtn.addEventListener('click', closeCamera);
+        takePictureBtn.addEventListener('click', takePicture);
+
+        // Cerrar modal al hacer clic fuera de él
+        cameraModal.addEventListener('click', function(e) {
+            if (e.target === cameraModal) {
+                closeCamera();
+            }
+        });
+
         // Manejar selección de tipo de plástico
         const radioInputs = document.querySelectorAll('input[name="tipo_plastico"]');
         radioInputs.forEach(input => {
@@ -198,6 +296,23 @@ import Layout from "../layouts/Layout.astro";
                     }
                 });
             });
+        });
+
+        // Manejar envío del formulario
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aquí puedes agregar la lógica para enviar los datos del formulario
+            // incluyendo las imágenes capturadas que están en los inputs hidden
+            console.log('Formulario enviado');
+            
+            // Ejemplo de cómo obtener los datos de las imágenes:
+            for (let i = 1; i <= 6; i++) {
+                const imageInput = document.getElementById(`image_data_${i}`);
+                if (imageInput && imageInput.value) {
+                    console.log(`Imagen ${i} capturada:`, imageInput.value.substring(0, 50) + '...');
+                }
+            }
         });
     });
 </script>
